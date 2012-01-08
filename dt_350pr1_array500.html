@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>YUI 3 - DT Benchmarking 3.5.0PR1</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css" />  
+	<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/datatable-base/assets/datatable-base-core.css" />  
+	<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/datatable-base/assets/skins/sam//datatable-base-skin.css" />  
+	<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/datatable-base/assets/skins/sam//datatable-base-skin.css" />  
+	<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/datatable-base/assets/skins/sam//datatable-base.css" />  
+
+</head>
+
+<body class="yui3-skin-sam">
+
+	<script src="http://yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js"></script>
+	<script src="dt_gallery_pr5a.js"></script>
+	<script src="bench_data500.js"></script>   
+
+<script type="text/javascript">
+YUI({
+    //Last Gallery Build of this module
+   // gallery: 'gallery-2011.12.14-21-12'
+}).use( 'datatable-stuff', "console", function(Y) {
+
+	new Y.Console().render();
+               
+ 	var cols = [	
+		{ key: "pkey", label: "*pkey" }, 
+		{ key: "pint", label: "Random Int" }, 
+		{ key: "ptxt", label: "Random Text" }, 
+		{ key: "pdbl", label: "Random Float" },  
+		{ key: "pdt", label: "Random Date/Time" }  
+	];
+  
+	Y.log("instantiation", "info");
+	var table = new Y.DataTable({
+	    columns: cols,
+	    data: jsArray 
+	});
+	Y.log("... done instantiating", "info");
+
+	table.render('#divHere');
+	Y.log("... done rendering", "info");
+	
+ 
+});
+</script>
+<h2>YUI3 DT Benchmarking - 3.5.0PR1</h2>
+<div id="divHere"></div>
+
+</body>
+</html>
